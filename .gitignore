@@ -1,0 +1,54 @@
+
+# Compilados do IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# Arquivos de compilação
+/build/
+out/
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+*.swp
+*.bak
+*.orig
+
+# Configurações locais do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Dependências gerenciadas por Gradle ou Maven
+.gradle/
+build/
+*.jar
+*.war
+*.ear
+
+# Arquivos de cache do Gradle
+**/build/
+
+# Arquivos gerados pelo sistema operacional
+*.class
+*.project
+*.classpath
+*.settings/
+*.factorypath
+
+# Arquivos de execução ou configuração de IDEs
+run/
+*.ipr
+*.idea/
+*.vscode/
+
+# Testes gerados e binários
+test-results/
+test-output/
+bin/
+
+# Logs de execução
+*.log
+
+# Outros arquivos desnecessários
+*.~*   # Arquivos temporários de edição
