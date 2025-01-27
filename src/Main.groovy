@@ -1,3 +1,5 @@
+
+
 static void main(String[] args) {
 
   ArrayList<Empresa> empresas = new ArrayList<>([
@@ -16,7 +18,7 @@ static void main(String[] args) {
           new Candidato("Felipe Costa",  "felipe.costa@gmail.com",  "BA", "Engenheiro de software com foco em desenvolvimento ágil",         ["Java", "Kotlin", "AWS"],             "16864349", "45678901234", 26)
   ]);
 
-  Scanner s = new Scanner(System.in)
+  Scanner s = new Scanner(System.in);
 
   while (true) {
 
@@ -30,6 +32,10 @@ static void main(String[] args) {
       listarEmpresas(empresas);
     } else if (option == 2) {
       listarCandidatos(candidatos);
+    } else if (option == 3) {
+      adicionarEmpresa(empresas);
+    } else if (option == 4) {
+      adicionarCandidato(candidatos);
     }
 
     println "Pressione Enter para continuar...";
@@ -51,12 +57,68 @@ static void listarEmpresas(ArrayList<Empresa> empresas) {
   }
 }
 
+static void adicionarEmpresa(ArrayList<Empresa> empresas) {
+  Scanner s = new Scanner(System.in);
+
+  println "\nInforme respectivamente:\n"
+  println "\tNome da empresa"
+  println "\tEmail corporativo"
+  println "\tPaís"
+  println "\tEstado"
+  println "\tDescrição"
+  println "\tCompetências (Separadas por vírgula)"
+  println "\tCEP"
+  println "\tCNPJ\n"
+
+  String nome = s.nextLine();
+  String email = s.nextLine();
+  String pais = s.nextLine();
+  String estado = s.nextLine();
+  String descricao = s.nextLine();
+  ArrayList<String> competencias = s.nextLine().split(',') ;
+  String cep = s.nextLine();
+  String cnpj = s.nextLine();
+
+  Empresa novaEmpresa = new Empresa(nome, email, estado, descricao, competencias, cep, cnpj, pais);
+
+  empresas.add(novaEmpresa);
+}
+
+static void adicionarCandidato(ArrayList<Candidato> candidatos) {
+  Scanner s = new Scanner(System.in);
+
+  println "\nInforme respectivamente:\n"
+  println "\tNome"
+  println "\tEmail"
+  println "\tEstado"
+  println "\tDescrição"
+  println "\tCompetências (Separadas por vírgula)"
+  println "\tCEP"
+  println "\tCPF"
+  println "\tIdade\n"
+
+  String nome = s.nextLine();
+  String email = s.nextLine();
+  String estado = s.nextLine();
+  String descricao = s.nextLine();
+  ArrayList<String> competencias = s.nextLine().split(',') ;
+  String cep = s.nextLine();
+  String cpf = s.nextLine();
+  int idade = s.nextInt();
+
+  Candidato novoCandidato = new Candidato(nome, email, estado, descricao, competencias, cep, cpf, idade);
+
+  candidatos.add(novoCandidato);
+}
+
 static int menu() {
 
   Scanner s = new Scanner(System.in)
 
   println "1 - Listar empresas";
   println "2 - Listar candidatos";
+  println "3 - Adicionar empresa";
+  println "4 - Adicionar candidato";
   println "\n0 - Sair\n";
 
   int option = s.nextInt();
